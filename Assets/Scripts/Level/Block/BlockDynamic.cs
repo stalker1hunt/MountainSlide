@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
+using MountainSlide.Level.Block;
 using MountainSlide.GameManager;
-
 public class BlockDynamic : Block
 {
     private void Start()
@@ -22,3 +22,4 @@ public class BlockDynamic : Block
             GameManager.Instance.Respawn();
     }
 }
+

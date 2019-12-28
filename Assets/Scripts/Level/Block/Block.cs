@@ -1,6 +1,9 @@
 ﻿using UnityEngine;
 
-public class Block : MonoBehaviour
+namespace MountainSlide.Level.Block
 {
- 
+    public class Block : MonoBehaviour
+    {
+
+    }
 }

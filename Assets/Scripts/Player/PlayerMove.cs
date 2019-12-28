@@ -20,6 +20,8 @@ namespace MountainSlide.Player
         private float curentSpeed;
         public float CurentSpeed { get { return curentSpeed; } }
 
+        bool boostActive;
+
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody>();
@@ -46,14 +48,31 @@ namespace MountainSlide.Player
         private void ApplyInput()
         {
             if (Joystick.Horizontal >= 0.2f)
-                playerRigidbody.AddForce(new Vector3(10, 0, 0), ForceMode.Acceleration);
+                playerRigidbody.AddForce(new Vector3(1, 0, 0), ForceMode.Impulse);
             else if (Joystick.Horizontal <= -0.2f)
-                playerRigidbody.AddForce(new Vector3(-10, 0, 0), ForceMode.Acceleration);
+                playerRigidbody.AddForce(new Vector3(-1, 0, 0), ForceMode.Impulse);
         }
 
-        public void ApplyBoost()
+        public void ApplyBoost(TypeBoost typeBoost)
         {
+            switch (typeBoost)
+            {
+                case TypeBoost.Default:
+                    break;
+                case TypeBoost.SpeedUp:
+                    StartCoroutine(StartBoost());
+                    break;
+            }
+        }
 
+        IEnumerator StartBoost()
+        {
+            playerRigidbody.AddForce(new Vector3(0, -10, 0), ForceMode.Impulse);
+            maxSpeed = -30;
+            boostActive = true;
+            yield return new WaitForSeconds(3);
+            boostActive = false;
+            maxSpeed = -20;
         }
     }
 }

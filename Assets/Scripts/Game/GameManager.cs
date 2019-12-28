@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using MountainSlide.Player;
 using MountainSlide.Camera;
+using MountainSlide.Level.Boost;
 
 namespace MountainSlide.GameManager
 {
@@ -12,6 +13,9 @@ namespace MountainSlide.GameManager
     {
         private static GameManager instance;
         public static GameManager Instance { get { return instance ? instance : instance = FindObjectOfType<GameManager>(); } }
+
+        [SerializeField]
+        private UI.UIManager uIManager;
 
         [Header("Player")]
         [SerializeField]
@@ -24,19 +28,21 @@ namespace MountainSlide.GameManager
         private DynamicJoystick joystick;
         private PlayerMove cachePlayer;
 
+        [Header("Level")]
+        [SerializeField]
+        private Transform finish;
+        public static bool IsEndLevel;
+
         private void Awake()
         {
             instance = this;
         }
 
-        private void Start()
+        public void InitGame()
         {
-            InitManager();
-        }
-
-        public void InitManager()
-        {
-            InitPlayer(() => { });
+            InitPlayer(() => {
+                uIManager.StartCheckDistance();
+            });
         }
 
         private void InitPlayer(Action onSucsess = null, Action onFailed = null)
@@ -60,6 +66,11 @@ namespace MountainSlide.GameManager
             }
         }
 
+        public float GetCurentDistance()
+        {
+            return Vector3.Distance(cachePlayer.gameObject.transform.position, finish.position);
+        }
+
         public void Respawn()
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -67,13 +78,13 @@ namespace MountainSlide.GameManager
 
         public void BoostTake(TypeBoost typeBoost)
         {
-            Debug.Log(typeBoost.ToString());
-            //поднять скорость, отобразить на уи
+            cachePlayer.ApplyBoost(typeBoost);
+            uIManager.StartBoost(3, typeBoost);
         }
 
         public void FinishLevel()
         {
-
+            IsEndLevel = true;
         }
     }
 }

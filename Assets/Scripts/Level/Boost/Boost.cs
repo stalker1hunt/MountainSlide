@@ -1,7 +1,10 @@
 ﻿using UnityEngine;
 
-public class Boost : MonoBehaviour
+namespace MountainSlide.Level.Boost
 {
-    public TypeBoost TypeBoost;
-    public int Level;
+    public class Boost : MonoBehaviour
+    {
+        public TypeBoost TypeBoost;
+    }
 }
+
