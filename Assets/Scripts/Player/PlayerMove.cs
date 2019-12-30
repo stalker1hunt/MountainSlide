@@ -13,7 +13,7 @@ namespace MountainSlide.Player
         public bool InitPlayer;
 
         [SerializeField]
-        [Range(-100, 0)]
+        [Range(0, 100)]
         private float maxSpeed;
         public float MaxSpeed { get { return maxSpeed; } }
 
@@ -47,10 +47,31 @@ namespace MountainSlide.Player
 
         private void ApplyInput()
         {
-            if (Joystick.Horizontal >= 0.2f)
-                playerRigidbody.AddForce(new Vector3(1, 0, 0), ForceMode.Impulse);
-            else if (Joystick.Horizontal <= -0.2f)
-                playerRigidbody.AddForce(new Vector3(-1, 0, 0), ForceMode.Impulse);
+           // float delta = 2 * Joystick.Horizontal;
+           
+            if (Joystick.Horizontal >= 0.2f || (Joystick.Horizontal <= -0.2f))
+            {
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y * Joystick.Horizontal, 0);
+            }
+            //else
+            //{
+            //    //if (transform.eulerAngles.y > 45 || transform.eulerAngles.y < -45)
+            //    //    transform.eulerAngles = new Vector3(transform.eulerAngles.x, 0, 0);
+            //}
+
+            float rotationZ = transform.eulerAngles.z * Joystick.Horizontal * Time.deltaTime * 5;
+            float rotationY = transform.eulerAngles.y * Joystick.Horizontal * Time.deltaTime * 5;
+
+            rotationY = Mathf.Clamp(rotationY, -45, 45);
+            rotationZ = Mathf.Clamp(rotationZ, -45, 45);
+
+            var newRotation = Quaternion.Euler(transform.localEulerAngles.x, rotationY, rotationZ);
+            transform.rotation = newRotation;
+
+            if (Joystick.Horizontal >= 0.2f || (Joystick.Horizontal <= -0.2f))
+            {
+                playerRigidbody.AddForce(new Vector3(-Joystick.Horizontal, 0, 0), ForceMode.VelocityChange);
+            }
         }
 
         public void ApplyBoost(TypeBoost typeBoost)
