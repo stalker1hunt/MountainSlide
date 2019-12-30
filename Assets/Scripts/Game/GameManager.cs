@@ -50,11 +50,14 @@ namespace MountainSlide.GameManager
             try
             {
                 var pl = Instantiate(playerPrefab, spawnHolderPlayer, true);
-                pl.GetComponent<Rigidbody>().isKinematic = true;
+                var rb = pl.GetComponent<Rigidbody>();
+                rb.Sleep();
                 pl.InitPlayer = false;
                 pl.Joystick = joystick;
                 cameraFollow.target = pl.gameObject.transform;
-                pl.GetComponent<Rigidbody>().isKinematic = false;
+                if (rb.IsSleeping())
+                    rb.WakeUp();
+
                 pl.InitPlayer = true;
                 cachePlayer = pl;
                 onSucsess.Invoke();
@@ -85,6 +88,7 @@ namespace MountainSlide.GameManager
         public void FinishLevel()
         {
             IsEndLevel = true;
+            uIManager.FinishGame();
         }
     }
 }

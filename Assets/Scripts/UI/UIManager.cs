@@ -32,9 +32,14 @@ namespace MountainSlide.UI
             panelStart.SetActive(false);
         }
 
+        public void FinishGame()
+        {
+            panelFinish.SetActive(true);
+        }
+
         public void Restart()
         {
-            GameManager.GameManager.Instance.Respawn();
+            gm.Respawn();
         }
 
         public void StartCheckDistance() 

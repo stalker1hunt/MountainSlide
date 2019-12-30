@@ -10,9 +10,7 @@ public class BoostUi : MonoBehaviour
     private Image iconBoost;
     [SerializeField]
     private TextMeshProUGUI timeBoost; 
-
     public float BoostTime { private get { return float.Parse(timeBoost.text); } set { timeBoost.text = value.ToString(); } }
-
 
     public void SetupBoostUi(TypeBoost typeBoost)
     {
