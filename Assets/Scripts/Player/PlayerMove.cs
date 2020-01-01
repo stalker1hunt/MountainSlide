@@ -13,6 +13,9 @@ namespace MountainSlide.Player
         public bool InitPlayer;
 
         [SerializeField]
+        private GameObject meshObject;
+
+        [SerializeField]
         [Range(-100, 0)]
         private float maxSpeed;
         public float MaxSpeed { get { return maxSpeed; } }
@@ -27,10 +30,10 @@ namespace MountainSlide.Player
             playerRigidbody = GetComponent<Rigidbody>();
         }
 
-        void OnGUI()
-        {
-            GUI.Label(new Rect(10, 50, 150, 100), "speed " + Mathf.Abs(CurentSpeed));
-        }
+        //void OnGUI()
+        //{
+        //    GUI.Label(new Rect(10, 50, 150, 100), "speed " + Mathf.Abs(CurentSpeed));
+        //}
 
         private void FixedUpdate()
         {
@@ -45,8 +48,10 @@ namespace MountainSlide.Player
                     playerRigidbody.AddForce(new Vector3(-Joystick.Horizontal, 0, 0), ForceMode.VelocityChange);
                 }
 
+                DownSlide();
+                Interion();
                 ApplyInput();
-
+                RotationSubMesh();
 
                 //Mass();
 
@@ -65,11 +70,39 @@ namespace MountainSlide.Player
         private float myDrag;
         Vector3 gForceVector = new Vector3(0, 9.81f, 0);
 
+        //Кастомная гравитация
         private void Mass()
         {
             Vector3 newVelocity = playerRigidbody.velocity + gForceVector * playerRigidbody.mass * Time.deltaTime;
             newVelocity = newVelocity * Mathf.Clamp01(1f - myDrag * Time.deltaTime);
             playerRigidbody.velocity = -newVelocity;
+        }
+
+        private void RotationSubMesh()
+        {
+            float deltaRotation = curentSpeed * Time.deltaTime * 4;
+            float rotationX = transform.localEulerAngles.x * deltaRotation;
+            //var newRotation = Quaternion.Euler(rotationX, transform.localEulerAngles.y, transform.localEulerAngles.z);
+            //Debug.Log(newRotation.eulerAngles.x);
+            //meshObject.transform.localRotation = newRotation;
+            var newRotation = new Vector3(rotationX, 0, 0);
+            meshObject.transform.Rotate(newRotation);
+        }
+
+        private void DownSlide()
+        {
+            float x = -1f + 0.2f * Time.fixedDeltaTime;
+            float z = -1.8f + 0.2f * Time.fixedDeltaTime;
+            playerRigidbody.AddForce(new Vector3(0, x, z), ForceMode.VelocityChange);
+        }
+
+        private void Interion()
+        {
+            Vector3 velocity = playerRigidbody.velocity;
+            float drag = 0.9f;
+            velocity.x *= drag;
+            velocity.z *= drag;
+            playerRigidbody.velocity = velocity;
         }
 
         private void ApplyInput()
