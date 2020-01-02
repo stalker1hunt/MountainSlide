@@ -23,6 +23,9 @@ namespace MountainSlide.Player
         private float curentSpeed;
         public float CurentSpeed { get { return curentSpeed; } }
 
+        [SerializeField]
+        private float buffSpeed;
+
         bool boostActive;
 
         private void Awake()
@@ -30,10 +33,10 @@ namespace MountainSlide.Player
             playerRigidbody = GetComponent<Rigidbody>();
         }
 
-        //void OnGUI()
-        //{
-        //    GUI.Label(new Rect(10, 50, 150, 100), "speed " + Mathf.Abs(CurentSpeed));
-        //}
+        void OnGUI()
+        {
+            GUI.Label(new Rect(10, 100, 150, 100), "speed " + Mathf.Abs(CurentSpeed));
+        }
 
         private void FixedUpdate()
         {
@@ -92,7 +95,7 @@ namespace MountainSlide.Player
         private void DownSlide()
         {
             float x = -1f + 0.2f * Time.fixedDeltaTime;
-            float z = -1.8f + 0.2f * Time.fixedDeltaTime;
+            float z = -1.8f*buffSpeed + 0.2f * Time.fixedDeltaTime;
             playerRigidbody.AddForce(new Vector3(0, x, z), ForceMode.VelocityChange);
         }
 
@@ -133,11 +136,12 @@ namespace MountainSlide.Player
 
         IEnumerator StartBoost()
         {
-            //playerRigidbody.AddForce(new Vector3(0, -10, -10), ForceMode.VelocityChange);
+            buffSpeed = 1.2f;
             maxSpeed = -30;
             boostActive = true;
             yield return new WaitForSeconds(3);
             boostActive = false;
+            buffSpeed = 1f;
             maxSpeed = -20;
         }
     }

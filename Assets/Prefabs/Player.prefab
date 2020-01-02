@@ -113,6 +113,7 @@ MonoBehaviour:
   InitPlayer: 0
   meshObject: {fileID: 298255451037612726}
   maxSpeed: -20
+  buffSpeed: 1
   myDrag: 90
 --- !u!64 &4155380602818499687
 MeshCollider:
