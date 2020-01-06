@@ -28,6 +28,7 @@ namespace MountainSlide.UI
 
         public void StartGame()
         {
+            Debug.Log("StartGame");
             gm.InitGame();
             panelStart.SetActive(false);
         }
