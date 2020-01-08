@@ -91,6 +91,7 @@ GameObject:
   - component: {fileID: 5071988028320791646}
   - component: {fileID: 5071988028320791633}
   - component: {fileID: 5071988028320791632}
+  - component: {fileID: 143551500083919304}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -107,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 5071988028320791635}
   m_LocalRotation: {x: -0.674676, y: 0.21168926, z: 0.21168926, w: 0.674676}
   m_LocalPosition: {x: -21.52, y: 77.48, z: 12.88}
-  m_LocalScale: {x: 6.7788982, y: 12, z: 12}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4361963227431187718}
   m_Father: {fileID: 0}
@@ -128,7 +129,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5071988028320791635}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -172,7 +173,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 96
+  m_Constraints: 0
   m_CollisionDetection: 2
 --- !u!114 &5071988028320791633
 MonoBehaviour:
@@ -192,6 +193,11 @@ MonoBehaviour:
   maxSpeed: -20
   buffSpeed: 1
   myDrag: 90
+  xMax: 75
+  xMin: -75
+  zMax: 75
+  zMin: -75
+  speed: 30000
 --- !u!64 &5071988028320791632
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -206,3 +212,21 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9de216de6c8a04246ba535517cd4da6e, type: 3}
+--- !u!143 &143551500083919304
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5071988028320791635}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Height: 0.56211114
+  m_Radius: 0.2810556
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}

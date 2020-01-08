@@ -49,7 +49,7 @@ namespace MountainSlide.GameManager
         {
             try
             {
-                var pl = Instantiate(playerPrefab, spawnHolderPlayer, true);
+                var pl = Instantiate(playerPrefab, spawnHolderPlayer.position, Quaternion.identity);
                 var rb = pl.GetComponent<Rigidbody>();
                 rb.Sleep();
                 pl.InitPlayer = false;
@@ -60,6 +60,7 @@ namespace MountainSlide.GameManager
 
                 pl.InitPlayer = true;
                 cachePlayer = pl;
+
                 onSucsess.Invoke();
             }
             catch (Exception)

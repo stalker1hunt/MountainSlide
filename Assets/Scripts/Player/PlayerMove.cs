@@ -8,7 +8,7 @@ namespace MountainSlide.Player
     public class PlayerMove : MonoBehaviour
     {
         private Rigidbody playerRigidbody;
-        [HideInInspector]
+        private CharacterController charControl;
         public DynamicJoystick Joystick;
         public bool InitPlayer;
 
@@ -31,6 +31,7 @@ namespace MountainSlide.Player
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody>();
+            charControl = GetComponent<CharacterController>();
         }
 
         void OnGUI()
@@ -38,9 +39,12 @@ namespace MountainSlide.Player
             GUI.Label(new Rect(10, 100, 150, 100), "speed " + Mathf.Abs(CurentSpeed));
         }
 
+        float smooth = 5.0f;
+        float tiltAngle = 60.0f;
+
         private void FixedUpdate()
         {
-            if (!InitPlayer) return;
+             //if (!InitPlayer) return;
 
             if (playerRigidbody != null)
             {
@@ -48,21 +52,12 @@ namespace MountainSlide.Player
 
                 if (Joystick.Horizontal >= 0.2f || (Joystick.Horizontal <= -0.2f))
                 {
-                    playerRigidbody.AddForce(new Vector3(-Joystick.Horizontal, 0, 0), ForceMode.VelocityChange);
+     
                 }
 
-                DownSlide();
-                Interion();
-                ApplyInput();
-                RotationSubMesh();
-
-                //Mass();
-
-                //if (MaxSpeed != 0 && CurentSpeed < MaxSpeed)
-                //{
-                //    curentSpeed = MaxSpeed;
-                //    //playerRigidbody.velocity = new Vector3(playerRigidbody.velocity.x, MaxSpeed, playerRigidbody.velocity.z);
-                //}
+                float tiltAroundZ = Joystick.Horizontal * tiltAngle;
+                Quaternion target = Quaternion.Euler(0, 0, tiltAroundZ);
+                transform.rotation = Quaternion.Slerp(transform.rotation, target, Time.deltaTime * smooth);
             }
             else
             {
@@ -95,7 +90,7 @@ namespace MountainSlide.Player
         private void DownSlide()
         {
             float x = -1f + 0.2f * Time.fixedDeltaTime;
-            float z = -1.8f*buffSpeed + 0.2f * Time.fixedDeltaTime;
+            float z = -1f * buffSpeed + 0.2f * Time.fixedDeltaTime;
             playerRigidbody.AddForce(new Vector3(0, x, z), ForceMode.VelocityChange);
         }
 
@@ -110,16 +105,43 @@ namespace MountainSlide.Player
 
         private void ApplyInput()
         {
-            float deltaRotation = Joystick.Horizontal * Time.deltaTime * 4;
+            float deltaRotation = Joystick.Horizontal * Time.deltaTime;
 
-            float rotationZ = transform.eulerAngles.z * deltaRotation;
+            //float rotationZ = transform.eulerAngles.z * deltaRotation;
             float rotationY = transform.eulerAngles.y * deltaRotation;
 
             rotationY = Mathf.Clamp(rotationY, -45, 45);
-            rotationZ = Mathf.Clamp(rotationZ, -45, 45);
+            //rotationZ = Mathf.Clamp(rotationZ, -45, 45);
 
-            var newRotation = Quaternion.Euler(transform.eulerAngles.x, rotationY, rotationZ);
+            var newRotation =  Quaternion.Euler(transform.eulerAngles.x, rotationY, transform.eulerAngles.z);
             transform.rotation = newRotation;
+        }
+
+        public int xMax = 75;
+        public int xMin = -75;
+        public int zMax = 75;
+        public int zMin = -75;
+
+        float horizontal;
+        float vertical;
+
+        public float speed = 10;
+
+        private void TestAngles()
+        {
+            horizontal = -Joystick.Horizontal * speed;
+            vertical = Joystick.Horizontal * speed;
+
+            Mathf.Clamp(horizontal, xMin, xMax);
+            Mathf.Clamp(vertical, zMin, zMax);
+
+            transform.localEulerAngles = new Vector3(vertical, 0, horizontal) * Time.deltaTime;
+
+            print("Horizontal: " + horizontal);
+            print("Vertical: " + vertical);
+
+            print("rotation X: " + GetComponent<Rigidbody>().transform.localEulerAngles.x);
+            print("rotation Z: " + GetComponent<Rigidbody>().transform.localEulerAngles.z);
         }
 
         public void ApplyBoost(TypeBoost typeBoost)
