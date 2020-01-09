@@ -6,6 +6,7 @@ using UnityEngine;
 using MountainSlide.Player;
 using MountainSlide.Camera;
 using MountainSlide.Level.Boost;
+using RVP;
 
 namespace MountainSlide.GameManager
 {
@@ -85,8 +86,15 @@ namespace MountainSlide.GameManager
 
         public void BoostTake(TypeBoost typeBoost)
         {
-            //cachePlayer.ApplyBoost(typeBoost);
+            StartCoroutine(StartBoost());
             uIManager.StartBoost(3, typeBoost);
+        }
+
+        IEnumerator StartBoost()
+        {
+            cachePlayer.GetComponent<MobileInput>().SetBoost(true);
+            yield return new WaitForSeconds(3);
+            cachePlayer.GetComponent<MobileInput>().SetBoost(false);
         }
 
         public void FinishLevel()
