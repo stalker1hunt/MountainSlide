@@ -8,7 +8,6 @@ namespace MountainSlide.Player
     public class PlayerMove : MonoBehaviour
     {
         private Rigidbody playerRigidbody;
-        private CharacterController charControl;
         public DynamicJoystick Joystick;
         public bool InitPlayer;
 
@@ -31,7 +30,6 @@ namespace MountainSlide.Player
         private void Awake()
         {
             playerRigidbody = GetComponent<Rigidbody>();
-            charControl = GetComponent<CharacterController>();
         }
 
         void OnGUI()
@@ -44,7 +42,7 @@ namespace MountainSlide.Player
 
         private void FixedUpdate()
         {
-             //if (!InitPlayer) return;
+            if (!InitPlayer) return;
 
             if (playerRigidbody != null)
             {

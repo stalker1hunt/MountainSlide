@@ -18,15 +18,16 @@ namespace MountainSlide.GameManager
         private UI.UIManager uIManager;
 
         [Header("Player")]
-        [SerializeField]
-        private PlayerMove playerPrefab;
+        //[SerializeField]
+        //private PlayerMove playerPrefab;
         [SerializeField]
         private Transform spawnHolderPlayer;
+        //[SerializeField]
+        //private CameraFollow cameraFollow;
+        //[SerializeField]
+        //private DynamicJoystick joystick;
         [SerializeField]
-        private CameraFollow cameraFollow;
-        [SerializeField]
-        private DynamicJoystick joystick;
-        private PlayerMove cachePlayer;
+        private GameObject cachePlayer;
 
         [Header("Level")]
         [SerializeField]
@@ -40,12 +41,13 @@ namespace MountainSlide.GameManager
 
         public void InitGame()
         {
-            InitPlayer(() => {
-                uIManager.StartCheckDistance();
-            });
+            //InitPlayer(() => {
+            //});
+
+            uIManager.StartCheckDistance();
         }
 
-        private void InitPlayer(Action onSucsess = null, Action onFailed = null)
+        /*  private void InitPlayer(Action onSucsess = null, Action onFailed = null)
         {
             try
             {
@@ -69,10 +71,11 @@ namespace MountainSlide.GameManager
                 throw;
             }
         }
+        */
 
         public float GetCurentDistance()
         {
-            return Vector3.Distance(cachePlayer.gameObject.transform.position, finish.position);
+            return Vector3.Distance(cachePlayer.transform.position, finish.position);
         }
 
         public void Respawn()
@@ -82,7 +85,7 @@ namespace MountainSlide.GameManager
 
         public void BoostTake(TypeBoost typeBoost)
         {
-            cachePlayer.ApplyBoost(typeBoost);
+            //cachePlayer.ApplyBoost(typeBoost);
             uIManager.StartBoost(3, typeBoost);
         }
 

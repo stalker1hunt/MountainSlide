@@ -11,9 +11,9 @@ public class BlockDynamic : Block
     private void DynamicChange()
     {
         int xScale = Random.Range(1, 15);
-        int xPos = Random.Range(395, 433);
-        transform.localScale = new Vector3(xScale, transform.localScale.y, transform.localScale.z);
-        transform.localPosition = new Vector3(xPos, transform.position.y, transform.localPosition.z);
+        int xPos = Random.Range(-72, 70);
+        transform.localScale = new Vector3(transform.localScale.x, transform.localScale.y, xScale);
+        transform.localPosition = new Vector3(transform.localPosition.x, transform.position.y, xPos);
     }
 
     private void OnCollisionEnter(Collision collision)

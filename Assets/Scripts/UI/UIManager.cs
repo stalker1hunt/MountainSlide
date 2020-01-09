@@ -23,11 +23,15 @@ namespace MountainSlide.UI
         {
             Application.targetFrameRate = 60;
 
+            Time.timeScale = 0;
+
             panelStart.SetActive(true);
         }
 
         public void StartGame()
         {
+            Time.timeScale = 1;
+
             Debug.Log("StartGame");
             gm.InitGame();
             panelStart.SetActive(false);
@@ -73,7 +77,6 @@ namespace MountainSlide.UI
 
             onDone.Invoke();
         }
-
 
         IEnumerator CheckDistance()
         {
