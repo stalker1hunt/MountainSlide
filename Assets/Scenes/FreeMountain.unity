@@ -3395,6 +3395,11 @@ PrefabInstance:
       propertyPath: power
       value: 0.28
       objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635416534, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: axleFriction
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5039749279625765916, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: m_TagString
