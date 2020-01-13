@@ -82,7 +82,7 @@ namespace MountainSlide.UI
         {
             do
             {
-                progressBar.fillAmount = 1 - gm.GetCurentDistance() * 0.09f;
+                progressBar.fillAmount = 1 - gm.GetCurentDistance() * 0.01f;
                 yield return new WaitForSeconds(0.1f);
             } while (!GameManager.GameManager.IsEndLevel);
         }
