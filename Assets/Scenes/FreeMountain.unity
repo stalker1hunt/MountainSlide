@@ -1562,22 +1562,27 @@ PrefabInstance:
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.936
+      value: 55.748
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 69.644
+      value: 70.041
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.937
+      value: 2.919
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalScale.x
       value: 20.360044
+      objectReference: {fileID: 0}
+    - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.6720192
       objectReference: {fileID: 0}
     - target: {fileID: 7469596319028852099, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
@@ -2027,22 +2032,22 @@ PrefabInstance:
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.746
+      value: 56.754
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 70.043
+      value: 70.539
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.919
+      value: 3.309
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 20.360044
+      value: 22.742168
       objectReference: {fileID: 0}
     - target: {fileID: 8946030289476872011, guid: 44732074e10e1984ebd14e62852ae01d,
         type: 3}
@@ -2962,6 +2967,16 @@ PrefabInstance:
       propertyPath: fallSpeedLimit
       value: 0.46
       objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: basedOnWheelsGrounded
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: maxDriftAngle
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5039749279635369886, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: disableDuringCrash
@@ -3041,6 +3056,31 @@ PrefabInstance:
         type: 3}
       propertyPath: leanFactor.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635341950, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: detectDrift
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: oppositeWheel
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: sideAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: steerRangeMin
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: steerRangeMax
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46efd75de0966c4c87c933c405cc5f7, type: 3}
