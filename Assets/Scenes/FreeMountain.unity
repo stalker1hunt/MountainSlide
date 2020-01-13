@@ -2490,8 +2490,20 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 732600988}
+    - target: {fileID: 11410548, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: stayFlat
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11410548, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
       propertyPath: m_AllowMSAA
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11497068, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
