@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main.unity
-    guid: f6df71f09cfcf0e49b9899f04948d35b
+    path: Assets/Scenes/FreeMountain.unity
+    guid: f37fc6a989efd754693768f74802abdd
   m_configObjects: {}

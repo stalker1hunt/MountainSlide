@@ -64,7 +64,7 @@ namespace RVP
             if (!string.IsNullOrEmpty(steerAxis))
             {
                 //vp.SetSteer(Input.GetAxis(steerAxis));
-                vp.SetSteer(dynamicJoystick.Horizontal);
+                vp.SetSteer(dynamicJoystick.Horizontal * 0.6f);
             }
 
             //if (!string.IsNullOrEmpty(ebrakeAxis))
@@ -90,7 +90,7 @@ namespace RVP
             if (!string.IsNullOrEmpty(rollAxis))
             {
                 //vp.SetRoll(Input.GetAxis(rollAxis));
-                vp.SetRoll(dynamicJoystick.Horizontal);
+                vp.SetRoll(dynamicJoystick.Horizontal * 0.6f);
             }
 
             //if (!string.IsNullOrEmpty(upshiftButton))
