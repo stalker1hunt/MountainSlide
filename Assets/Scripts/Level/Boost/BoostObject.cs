@@ -10,7 +10,7 @@ public class BoostObject : Boost
 
     private void OnTriggerEnter(Collider other)
     {
-        Instantiate(takeBoosteEffect, this.gameObject.transform.position, Quaternion.identity);
+        //Instantiate(takeBoosteEffect, this.gameObject.transform.position, Quaternion.identity);
 
         Destroy(this.gameObject);
         GameManager.Instance.BoostTake(TypeBoost);
