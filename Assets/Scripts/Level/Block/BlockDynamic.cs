@@ -5,7 +5,7 @@ public class BlockDynamic : Block
 {
     private void Start()
     {
-        DynamicChange();
+        //DynamicChange();
     }
 
     private void DynamicChange()
