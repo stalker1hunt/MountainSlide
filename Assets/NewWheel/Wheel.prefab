@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 5039749279627792300}
   m_Layer: 0
   m_Name: tire
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 5039749279635343342}
   m_Layer: 0
   m_Name: suspensionRR
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,8 +219,8 @@ MonoBehaviour:
   hardColliderRadiusFactor: 2.3
   brakeForce: 0.5
   ebrakeForce: 1
-  steerRangeMin: -50
-  steerRangeMax: 50
+  steerRangeMin: -20
+  steerRangeMax: 20
   steerFactor: 0
   steerAngle: 0
   ackermannFactor: 0.2
@@ -378,7 +378,7 @@ MonoBehaviour:
   applyInReverse: 1
   steeredWheels:
   - {fileID: 5039749279635434940}
-  rotate: 0
+  rotate: 1
   maxDegreesRotation: 0
   rotationOffset: 0
 --- !u!1 &5039749279625735898
@@ -397,9 +397,10 @@ GameObject:
   - component: {fileID: 5039749279628882434}
   - component: {fileID: 5039749279635341950}
   - component: {fileID: 5039749279635460392}
+  - component: {fileID: 732600989}
   m_Layer: 9
   m_Name: Wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -413,7 +414,7 @@ Transform:
   m_GameObject: {fileID: 5039749279625735898}
   m_LocalRotation: {x: -0, y: -0.9748196, z: 0, w: -0.22299488}
   m_LocalPosition: {x: 0.47198105, y: 3.958, z: 0.5430145}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
   m_Children:
   - {fileID: 5039749279625476802}
   - {fileID: 5039749279625415580}
@@ -467,12 +468,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 950cf8b6abec9974792705495dd652de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  basedOnWheelsGrounded: 1
+  basedOnWheelsGrounded: 0
   driftSpinAssist: 2
   driftSpinSpeed: 3
   driftSpinExponent: 2
   autoSteerDrift: 0
-  maxDriftAngle: 70
+  maxDriftAngle: 0
   driftSpinCurve:
     serializedVersion: 2
     m_Curve:
@@ -508,7 +509,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   driftPush: 2
   straightenAssist: 1
-  downforce: 2
+  downforce: 5
   invertDownforceInReverse: 0
   applyDownforceInAir: 1
   downforceCurve:
@@ -541,7 +542,7 @@ MonoBehaviour:
   rollOverForce: 20
   rollSpeedThreshold: 100
   angularDragOnJump: 1
-  fallSpeedLimit: Infinity
+  fallSpeedLimit: 0.46
   applyFallLimitUpwards: 0
 --- !u!114 &5039749279635369886
 MonoBehaviour:
@@ -555,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87ae995ac5f60be41976cd12bd927962, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  disableDuringCrash: 0
+  disableDuringCrash: 1
   flipPower: {x: 0, y: 0, z: 0}
   freeSpinFlip: 0
   stopFlip: 1
@@ -576,7 +577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   leanFactor: {x: 0.4, y: 2, z: 0.5}
-  leanSmoothness: 0.952
+  leanSmoothness: 0.878
   leanRollCurve:
     serializedVersion: 2
     m_Curve:
@@ -651,7 +652,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   endoSpeedThreshold: 5
   pitchExponent: 1
-  slideLeanFactor: 0.5
+  slideLeanFactor: 0.26
 --- !u!54 &5039749279628882434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -680,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88eb2f37da04ae48b060089a3929a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDrift: 1
+  detectDrift: 0
   detectJump: 1
   detectFlips: 1
   engine: {fileID: 5039749279635445600}
@@ -696,6 +697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf92e57a9edd9af4caa9b9985e3a1453, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dynamicJoystick: {fileID: 0}
   accelAxis: Accel
   brakeAxis: Brake
   steerAxis: Horizontal
@@ -706,6 +708,19 @@ MonoBehaviour:
   pitchAxis: Vertical
   yawAxis: Spin
   rollAxis: Horizontal
+--- !u!114 &732600989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039749279625735898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d068e7f9da63a54aaa284027dd960d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenRot: 1
 --- !u!1 &5039749279625735998
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,7 +766,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ignition: 1
-  power: 0.73
+  power: 0.28
   inputCurve:
     serializedVersion: 2
     m_Curve:
@@ -823,8 +838,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 4.180513
-      value: 0.76245624
+      time: 0.12121725
+      value: 0.4613927
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -832,8 +847,8 @@ MonoBehaviour:
       inWeight: 0.33333334
       outWeight: 0.33333334
     - serializedVersion: 3
-      time: 8.0434
-      value: 0.004496321
+      time: 0.2194252
+      value: 0.3249309
       inSlope: -0.3291178
       outSlope: -0.3291178
       tangentMode: 0
@@ -919,7 +934,7 @@ GameObject:
   - component: {fileID: 5039749279635348888}
   m_Layer: 0
   m_Name: wheel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1165,7 +1180,7 @@ GameObject:
   - component: {fileID: 2002434298419958568}
   m_Layer: 8
   m_Name: rim
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1178,7 +1193,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625765916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.15000004, z: 0}
+  m_LocalPosition: {x: -0.00000051358376, y: -0.14563265, z: 0.0000012839591}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5039749279625395196}
