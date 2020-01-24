@@ -75,6 +75,9 @@ namespace RVP
         public float fallSpeedLimit = Mathf.Infinity;
         public bool applyFallLimitUpwards;
 
+        public float SpeedLimit = Mathf.Infinity;
+        public bool ApplyLimit;
+
         void Start()
         {
             tr = transform;
@@ -125,6 +128,12 @@ namespace RVP
             {
                 rb.AddRelativeForce(Vector3.down * vp.localVelocity.y, ForceMode.Acceleration);
             }
+
+            if (rb.velocity.magnitude > SpeedLimit && ApplyLimit)
+            {
+                rb.velocity = Vector3.ClampMagnitude(rb.velocity, SpeedLimit);
+            }
+
         }
 
         void ApplySpinAssist()
