@@ -52,10 +52,15 @@ namespace MountainSlide.UI
             StartCoroutine(CheckDistance());
         }
 
+        float tSec;
+
+        //Разделить логику бустов и УИ на отдельные модули не зависиющих один от одного
         public void StartBoost(float sec, TypeBoost typeBoost)
         {
             boostUiSpeed.gameObject.SetActive(true);
             boostUiSpeed.SetupBoostUi(typeBoost);
+            if (boostUiSpeed.gameObject.activeSelf)
+            { tSec += sec; return; }
 
            StartCoroutine(StartBoostEffect(sec,()=> {
                 boostUiSpeed.gameObject.SetActive(false);
@@ -66,7 +71,7 @@ namespace MountainSlide.UI
 
         IEnumerator StartBoostEffect(float sec, Action onDone = null)
         {
-            float tSec = sec;
+            tSec = sec;
             do
             {
                 boostUiSpeed.BoostTime = tSec;
@@ -83,7 +88,6 @@ namespace MountainSlide.UI
             do
             {
                 progressBar.fillAmount = 1 - gm.GetCurentDistance() * 0.01f;
-               // Debug.Log(gm.GetCurentDistance());
                 yield return new WaitForSeconds(0.1f);
             } while (!GameManager.GameManager.IsEndLevel);
         }
