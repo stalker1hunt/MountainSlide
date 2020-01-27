@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
 
@@ -17,6 +18,8 @@ namespace MountainSlide.UI
         private Image progressBar;
         [SerializeField]
         private BoostUi boostUiSpeed;
+        [SerializeField]
+        private GameObject panelPause;
         private GameManager.GameManager gm => GameManager.GameManager.Instance;
 
         private void Start()
@@ -26,6 +29,17 @@ namespace MountainSlide.UI
             Time.timeScale = 0;
 
             panelStart.SetActive(true);
+        }
+
+        public void Pause(bool init)
+        {
+            Time.timeScale = init == true ? 0 : 1;
+            panelPause.SetActive(init);
+        }
+
+        public void LoadMain()
+        {
+            SceneManager.LoadSceneAsync("Main");
         }
 
         public void StartGame()
@@ -59,8 +73,6 @@ namespace MountainSlide.UI
         {
             boostUiSpeed.gameObject.SetActive(true);
             boostUiSpeed.SetupBoostUi(typeBoost);
-            if (boostUiSpeed.gameObject.activeSelf)
-            { tSec += sec; return; }
 
            StartCoroutine(StartBoostEffect(sec,()=> {
                 boostUiSpeed.gameObject.SetActive(false);
@@ -71,7 +83,7 @@ namespace MountainSlide.UI
 
         IEnumerator StartBoostEffect(float sec, Action onDone = null)
         {
-            tSec = sec;
+            tSec += sec;
             do
             {
                 boostUiSpeed.BoostTime = tSec;

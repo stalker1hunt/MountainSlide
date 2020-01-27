@@ -14,6 +14,11 @@ public class UiController : MonoBehaviour
     [SerializeField]
     private GameObject startPanel;
 
+    public void Start()
+    {
+        Application.targetFrameRate = 30;
+    }
+
     public void StartGame()
     {
         chooseLevel.SetActive(true);
