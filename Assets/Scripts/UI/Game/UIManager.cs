@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
 using UnityEngine.UI;
 
 namespace MountainSlide.UI
@@ -80,7 +78,6 @@ namespace MountainSlide.UI
         }
 
         #region Coruntine
-
         IEnumerator StartBoostEffect(float sec, Action onDone = null)
         {
             tSec += sec;
@@ -103,7 +100,6 @@ namespace MountainSlide.UI
                 yield return new WaitForSeconds(0.1f);
             } while (!GameManager.GameManager.IsEndLevel);
         }
-
         #endregion
     }
 }
