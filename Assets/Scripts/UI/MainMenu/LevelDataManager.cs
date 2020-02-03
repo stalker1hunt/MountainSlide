@@ -16,7 +16,7 @@ public class LevelDataManager : ScriptableObject
     }
 
     /// <summary>
-    /// Пишем индекс уровеня в массиве, если хотите взять 1 уровень пишем 0
+    /// Пишем индекс уровня в массиве, если хотите взять 1 уровень пишем 0
     /// </summary>
     /// <param name="numberLevel"></param>
     /// <returns></returns>
