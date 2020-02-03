@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "New Level", menuName = "Level Data", order = 51)]
+[CreateAssetMenu(fileName = "New Level", menuName = "My Level/Level", order = 51)]
 public class LevelData : ScriptableObject
 {
     [SerializeField]

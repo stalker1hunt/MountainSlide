@@ -8,7 +8,7 @@ namespace MountainSlide.UI
 {
     public class UIManager : MonoBehaviour
     {
-        [SerializeField] 
+        [SerializeField]
         private GameObject panelStart;
         [SerializeField]
         private GameObject panelFinish;
@@ -59,7 +59,17 @@ namespace MountainSlide.UI
             gm.Respawn();
         }
 
-        public void StartCheckDistance() 
+        public void NextLevel()
+        {
+            var _levelData = Resources.Load<LevelDataManager>("Data/LevelManager");
+            var _level = _levelData.GetNextLevel(SceneManager.GetActiveScene().name);
+            if (_level != null)
+                SceneManager.LoadSceneAsync(_level.LevelName);
+            else
+                LoadMain();
+        }
+
+        public void StartCheckDistance()
         {
             StartCoroutine(CheckDistance());
         }
@@ -72,7 +82,8 @@ namespace MountainSlide.UI
             boostUiSpeed.gameObject.SetActive(true);
             boostUiSpeed.SetupBoostUi(typeBoost);
 
-           StartCoroutine(StartBoostEffect(sec,()=> {
+            StartCoroutine(StartBoostEffect(sec, () =>
+            {
                 boostUiSpeed.gameObject.SetActive(false);
             }));
         }
