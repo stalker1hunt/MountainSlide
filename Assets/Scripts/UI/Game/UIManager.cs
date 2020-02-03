@@ -64,9 +64,17 @@ namespace MountainSlide.UI
             var _levelData = Resources.Load<LevelDataManager>("Data/LevelManager");
             var _level = _levelData.GetNextLevel(SceneManager.GetActiveScene().name);
             if (_level != null)
+            {
                 SceneManager.LoadSceneAsync(_level.LevelName);
+            }
             else
-                LoadMain();
+            {
+                var _levelStart = _levelData.GetLevel(1);
+                if (_levelStart != null)
+                    SceneManager.LoadSceneAsync(_levelStart.LevelName);
+                else
+                    LoadMain();
+            }
         }
 
         public void StartCheckDistance()
