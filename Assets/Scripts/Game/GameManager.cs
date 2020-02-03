@@ -6,6 +6,7 @@ using UnityEngine;
 using MountainSlide.Player;
 using MountainSlide.Camera;
 using MountainSlide.Level.Boost;
+using MountainSlide.Save;
 using RVP;
 
 namespace MountainSlide.GameManager

@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public static class Prefs
+namespace MountainSlide.Save
 {
-    private const string s_LevelCompl = "level completed";
-    public static int LevelCompleted
+    public static class Prefs
     {
-        get { return PlayerPrefs.GetInt(s_LevelCompl, 0); }
-        set { PlayerPrefs.SetInt(s_LevelCompl, value); }
+        private const string s_LevelCompl = "level completed";
+        public static int LevelCompleted
+        {
+            get { return PlayerPrefs.GetInt(s_LevelCompl, 0); }
+            set { PlayerPrefs.SetInt(s_LevelCompl, value); }
+        }
     }
 }
