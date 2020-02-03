@@ -35,17 +35,23 @@ namespace MountainSlide.GameManager
         private Transform finish;
         public static bool IsEndLevel;
 
+        private int levelCompleted;
+        public int LevelCompleted { get { return levelCompleted; } }
+
         private void Awake()
         {
             instance = this;
         }
 
-        public void InitGame()
+        public void InitGame(Action onSuncsess = null)
         {
             //InitPlayer(() => {
             //});
 
+            levelCompleted = Prefs.LevelCompleted;
             uIManager.StartCheckDistance();
+
+            onSuncsess?.Invoke();
         }
 
         /*  private void InitPlayer(Action onSucsess = null, Action onFailed = null)
@@ -99,6 +105,7 @@ namespace MountainSlide.GameManager
 
         public void FinishLevel()
         {
+            Prefs.LevelCompleted = ++levelCompleted;
             IsEndLevel = true;
             uIManager.FinishGame();
         }

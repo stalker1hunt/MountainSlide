@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 namespace MountainSlide.UI
 {
@@ -18,6 +19,9 @@ namespace MountainSlide.UI
         private BoostUi boostUiSpeed;
         [SerializeField]
         private GameObject panelPause;
+        [SerializeField]
+        private TextMeshProUGUI countLevels;
+
         private GameManager.GameManager gm => GameManager.GameManager.Instance;
 
         private void Start()
@@ -26,6 +30,7 @@ namespace MountainSlide.UI
 
             Time.timeScale = 0;
 
+            countLevels.gameObject.SetActive(false);
             panelStart.SetActive(true);
         }
 
@@ -44,9 +49,13 @@ namespace MountainSlide.UI
         {
             Time.timeScale = 1;
 
-            Debug.Log("StartGame");
-            gm.InitGame();
-            panelStart.SetActive(false);
+            countLevels.gameObject.SetActive(true);
+
+            gm.InitGame(() =>
+            {
+                countLevels.text = $"{gm.LevelCompleted} count lvl completed" ;
+                panelStart.SetActive(false);
+            });
         }
 
         public void FinishGame()
