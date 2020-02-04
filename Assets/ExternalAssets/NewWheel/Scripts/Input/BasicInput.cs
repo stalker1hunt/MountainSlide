@@ -82,16 +82,16 @@ namespace RVP
             //    vp.SetPitch(Input.GetAxis(pitchAxis));
             //}
 
-            //if (!string.IsNullOrEmpty(yawAxis))
-            //{
-            //    vp.SetYaw(Input.GetAxis(yawAxis));
-            //}
-
-            if (!string.IsNullOrEmpty(rollAxis))
+            if (!string.IsNullOrEmpty(yawAxis))
             {
-                //vp.SetRoll(Input.GetAxis(rollAxis));
-                vp.SetRoll(dynamicJoystick.Horizontal * 0.6f);
+                vp.SetYaw(dynamicJoystick.Horizontal * 0.6f);
             }
+
+            //if (!string.IsNullOrEmpty(rollAxis))
+            //{
+            //    //vp.SetRoll(Input.GetAxis(rollAxis));
+            //    vp.SetRoll(dynamicJoystick.Horizontal * 0.6f);
+            //}
 
             //if (!string.IsNullOrEmpty(upshiftButton))
             //{

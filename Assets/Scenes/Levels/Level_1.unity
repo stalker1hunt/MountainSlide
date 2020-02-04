@@ -3045,6 +3045,16 @@ PrefabInstance:
       propertyPath: applyInReverse
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: steerFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: ebrakeForce
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46efd75de0966c4c87c933c405cc5f7, type: 3}
 --- !u!1 &8882233252359733379
