@@ -82,7 +82,7 @@ namespace MountainSlide.UI
                 if (_levelStart != null)
                     SceneManager.LoadSceneAsync(_levelStart.LevelName);
                 else
-                    LoadMain();
+                    Restart();
             }
         }
 
