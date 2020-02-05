@@ -20,6 +20,9 @@ public class BlockDynamic : Block
     {
         if (collision.collider.tag == "Player")
             GameManager.Instance.Respawn();
+
+        if (collision.collider.tag == "Bot")
+            Debug.Log("BOT");
     }
 }
 
