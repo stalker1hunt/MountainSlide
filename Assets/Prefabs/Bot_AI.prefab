@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wheel: {fileID: 2497292583808176911}
   generateHardCollider: 1
-  hardColliderRadiusFactor: 0.2
+  hardColliderRadiusFactor: 1
   brakeForce: 0.5
   ebrakeForce: 1
   steerRangeMin: -50
@@ -719,7 +719,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497292583818418179}
-  m_LocalRotation: {x: -0.097550444, y: 0.70605016, z: -0.110417865, w: -0.69266516}
+  m_LocalRotation: {x: -0.09754892, y: 0.7060501, z: -0.110413745, w: -0.6926661}
   m_LocalPosition: {x: -24.4, y: 141.8, z: 35.21}
   m_LocalScale: {x: 1.03, y: 1.03, z: 1.03}
   m_Children:

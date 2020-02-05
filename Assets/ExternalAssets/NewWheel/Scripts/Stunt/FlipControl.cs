@@ -71,8 +71,6 @@ namespace RVP
 
                 //rb.AddForce(new Vector3(rb.gameObject.transform.position.x, rb.gameObject.transform.position.y, rb.gameObject.transform.position.z * vp.rollInput));
                // vp.rollInput
-
-                Debug.Log("OnAir");
             }
         }
 

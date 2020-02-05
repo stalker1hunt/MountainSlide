@@ -8,5 +8,8 @@ public class FinishZone : Block
     {
         if (collision.collider.tag == "Player")
             GameManager.Instance.FinishLevel();
+
+        if (collision.collider.tag == "Bot")
+            Debug.Log("Logic for bot");
     }
 }

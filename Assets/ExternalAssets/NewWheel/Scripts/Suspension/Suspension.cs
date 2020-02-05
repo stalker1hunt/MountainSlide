@@ -183,7 +183,7 @@ namespace RVP
                     compressCol.radius = wheel.rimWidth * hardColliderRadiusFactor;
                     compressCol.height = (wheel.popped ? wheel.rimRadius : Mathf.Lerp(wheel.rimRadius, wheel.tireRadius, wheel.tirePressure)) * 2;
                     compressCol.material = GlobalControl.frictionlessMatStatic;
-                    compressCol.tag = "Player";
+                    compressCol.tag = gameObject.tag;
                 }
 
                 steerRangeMax = Mathf.Max(steerRangeMin, steerRangeMax);
