@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7f887b80683d0e4e9f5ae7f392d7e5e
+guid: eee0757007cbc6d4fad7c58580aa0664
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -8,8 +8,7 @@ ModelImporter:
     2100000: lambert1
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface294
-    2186277476908879412: ImportLogs
+    4300000: polySurface37
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -38,7 +37,7 @@ ModelImporter:
     extraExposedTransformPaths: []
     extraUserProperties: []
     clipAnimations: []
-    isReadable: 0
+    isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1

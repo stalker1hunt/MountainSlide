@@ -17,7 +17,6 @@ public class BoostObject : Boost
 
         if (other.tag == "Bot")
             Debug.Log("Logic for bot");
-    
     }
 
     private void Update()
