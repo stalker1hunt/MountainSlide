@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1680261522
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680261523}
+  m_Layer: 9
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1680261523
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680261522}
+  m_LocalRotation: {x: 0.0000000052683564, y: -0.7071069, z: -0.0000000052683555,
+    w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0.32563284, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50.00004}
+  m_Children: []
+  m_Father: {fileID: 5039749279625395196}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5039749279625566070
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +151,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 1680261523}
   m_Father: {fileID: 5039749279625508314}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -139,7 +171,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625567224}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -218,10 +250,10 @@ MonoBehaviour:
   generateHardCollider: 1
   hardColliderRadiusFactor: 2.3
   brakeForce: 0.5
-  ebrakeForce: 1
+  ebrakeForce: 0
   steerRangeMin: -20
   steerRangeMax: 20
-  steerFactor: 0
+  steerFactor: 1
   steerAngle: 0
   ackermannFactor: 0.2
   camberCurve:
@@ -398,6 +430,7 @@ GameObject:
   - component: {fileID: 5039749279635341950}
   - component: {fileID: 5039749279635460392}
   - component: {fileID: 732600989}
+  - component: {fileID: 650165024624214629}
   m_Layer: 9
   m_Name: Wheel
   m_TagString: Player
@@ -542,8 +575,10 @@ MonoBehaviour:
   rollOverForce: 20
   rollSpeedThreshold: 100
   angularDragOnJump: 1
-  fallSpeedLimit: 0.46
+  fallSpeedLimit: 0.4
   applyFallLimitUpwards: 0
+  SpeedLimit: 15
+  ApplyLimit: 1
 --- !u!114 &5039749279635369886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -652,7 +687,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   endoSpeedThreshold: 5
   pitchExponent: 1
-  slideLeanFactor: 0.26
+  slideLeanFactor: 0.39
 --- !u!54 &5039749279628882434
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -721,6 +756,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screenRot: 1
+--- !u!114 &650165024624214629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039749279625735898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e0575c394be624083f1568d09a2de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelMeshContent: {fileID: 1680261523}
 --- !u!1 &5039749279625735998
 GameObject:
   m_ObjectHideFlags: 0
@@ -947,7 +995,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625764232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.005, y: 0.025, z: 0.149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5039749279625508314}
@@ -1193,7 +1241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625765916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.00000051358376, y: -0.14563265, z: 0.0000012839591}
+  m_LocalPosition: {x: -0.0050005354, y: -0.17063284, z: -0.14899966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5039749279625395196}
@@ -1215,7 +1263,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625765916}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

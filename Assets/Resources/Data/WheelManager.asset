@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86a5950a657864b4cbe11913bb3e130a, type: 3}
+  m_Name: WheelManager
+  m_EditorClassIdentifier: 
+  wheelDatas:
+  - {fileID: 11400000, guid: 555c8051be8853d40ba6559f0867f549, type: 2}
+  - {fileID: 11400000, guid: 35c248aa99267874799de79b71228678, type: 2}
+  - {fileID: 11400000, guid: 5dae19e93b9ff1a46876c60d3db77acb, type: 2}
+  - {fileID: 11400000, guid: 4257fbd3bfd10d045b9e4de1b9897884, type: 2}
