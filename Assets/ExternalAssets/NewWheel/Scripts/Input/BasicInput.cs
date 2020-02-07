@@ -28,26 +28,6 @@ namespace RVP
             vp = GetComponent<VehicleParent>();
         }
 
-        void Update()
-        {
-            //Get single-frame input presses
-            //if (!string.IsNullOrEmpty(upshiftButton))
-            //{
-            //    if (Input.GetButtonDown(upshiftButton))
-            //    {
-            //        vp.PressUpshift();
-            //    }
-            //}
-
-            //if (!string.IsNullOrEmpty(downshiftButton))
-            //{
-            //    if (Input.GetButtonDown(downshiftButton))
-            //    {
-            //        vp.PressDownshift();
-            //    }
-            //}
-        }
-
         void FixedUpdate()
         {
             //Get constant inputs

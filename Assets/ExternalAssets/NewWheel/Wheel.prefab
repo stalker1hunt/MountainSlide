@@ -254,7 +254,7 @@ MonoBehaviour:
   steerRangeMin: -40
   steerRangeMax: 40
   steerFactor: 1.56
-  steerAngle: 1
+  steerAngle: 0
   ackermannFactor: 0.2
   camberCurve:
     serializedVersion: 2
@@ -994,7 +994,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625764232}
-  m_LocalRotation: {x: 0, y: 0.40673664, z: 0, w: 0.9135454}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.005, y: 0.025, z: 0.149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1241,7 +1241,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625765916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.10738231, y: -0.17063284, z: -0.10341635}
+  m_LocalPosition: {x: -0.0050005354, y: -0.17063284, z: -0.14899966}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5039749279625395196}
