@@ -7,6 +7,11 @@ public class TravelPathManager : MonoBehaviour
     private static TravelPathManager instance;
     public static TravelPathManager Instance { get { return instance ? instance : instance = FindObjectOfType<TravelPathManager>(); } }
 
+    private void Awake()
+    {
+        instance = this;
+    }
+
     [SerializeField]
     private List<TravelPath> travelPaths = new List<TravelPath>();
 

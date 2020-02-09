@@ -12,7 +12,6 @@ public class SpawnerBots : MonoBehaviour
     [SerializeField]
     [Range(0, 4)]
     private int countEnemy;
-    [HideInInspector]
     public List<GameObject> Pull = new List<GameObject>();
 
     private void Start()
@@ -25,7 +24,7 @@ public class SpawnerBots : MonoBehaviour
         for (int i = 0; i < countEnemy; i++)
         {
             var _bot = Instantiate(objectBot, GetPos(), true);
-            _bot.FindWay();
+            _bot.gameObject.transform.localPosition = Vector3.zero;
             Pull.Add(_bot.gameObject);
         }
     }
@@ -39,5 +38,10 @@ public class SpawnerBots : MonoBehaviour
 
         _point.PositionTake = true;
         return _point.gameObject.transform;
+    }
+
+    public void FindWaysForBots()
+    {
+        Pull.ForEach(x => x.GetComponent<BotAI>().FindWay());
     }
 }

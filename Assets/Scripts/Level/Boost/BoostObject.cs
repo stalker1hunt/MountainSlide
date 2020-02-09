@@ -16,7 +16,7 @@ public class BoostObject : Boost
             GameManager.Instance.BoostTake(TypeBoost);
 
         if (other.tag == "Bot")
-            Debug.Log("Logic for bot");
+            Debug.Log("Logic for boost bot");
     }
 
     private void Update()

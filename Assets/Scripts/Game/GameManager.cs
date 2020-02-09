@@ -18,6 +18,8 @@ namespace MountainSlide.GameManager
 
         [SerializeField]
         private UI.UIManager uIManager;
+        [SerializeField]
+        private SpawnerBots spawner;
 
         [Header("Player")]
         //[SerializeField]
@@ -50,6 +52,7 @@ namespace MountainSlide.GameManager
             //});
 
             levelCompleted = Prefs.LevelCompleted;
+            spawner.FindWaysForBots();
             uIManager.StartCheckDistance();
 
             onSuncsess?.Invoke();

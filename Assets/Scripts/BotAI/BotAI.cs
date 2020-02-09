@@ -18,5 +18,6 @@ public class BotAI : MonoBehaviour
     {
         var _path = TravelPathManager.Instance.GetRandomTravelPath();
         moveBotAI.target = _path.StartPoint;
+        Debug.Log(moveBotAI.target);
     }
 }

@@ -256,7 +256,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: -0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 5649137379404321460}
   m_Father: {fileID: 2497292583818117891}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -275,7 +276,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497292583818325281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -354,7 +355,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2497292583818384069}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -702,10 +703,9 @@ GameObject:
   - component: {fileID: 2497292583808248845}
   - component: {fileID: 2497292583821559003}
   - component: {fileID: 2497292583808251047}
-  - component: {fileID: 2497292583808165873}
-  - component: {fileID: 7446951689564924996}
   - component: {fileID: 7446951689108962249}
   - component: {fileID: 4600479699559400635}
+  - component: {fileID: 3374891099152361139}
   m_Layer: 9
   m_Name: Bot_AI
   m_TagString: Bot
@@ -761,7 +761,7 @@ MonoBehaviour:
   wheelForceMode: 5
   suspensionForceMode: 5
   towVehicle: {fileID: 0}
-  canCrash: 1
+  canCrash: 0
   cameraDistanceChange: 0
   cameraHeightChange: 0
 --- !u!114 &2497292583808200901
@@ -995,42 +995,6 @@ MonoBehaviour:
   detectJump: 1
   detectFlips: 1
   engine: {fileID: 2497292583808147897}
---- !u!114 &2497292583808165873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2497292583818418179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf92e57a9edd9af4caa9b9985e3a1453, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dynamicJoystick: {fileID: 0}
-  accelAxis: Accel
-  brakeAxis: Brake
-  steerAxis: Horizontal
-  ebrakeAxis: Ebrake
-  boostButton: Boost
-  upshiftButton: Upshift
-  downshiftButton: Downshift
-  pitchAxis: Vertical
-  yawAxis: Spin
-  rollAxis: Horizontal
---- !u!114 &7446951689564924996
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2497292583818418179}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d068e7f9da63a54aaa284027dd960d5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  screenRot: 1
 --- !u!114 &7446951689108962249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1049,7 +1013,7 @@ MonoBehaviour:
   targetVelocity: -1
   viewBlockMask:
     serializedVersion: 2
-    m_Bits: 1
+    m_Bits: 0
   stopTimeReverse: 1
   reverseAttemptTime: 1
   resetReverseCount: 2
@@ -1066,6 +1030,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d160febfbbb9e9645a4babcd403d22c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3374891099152361139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2497292583818418179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17e0575c394be624083f1568d09a2de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wheelMeshContent: {fileID: 5649137379404321460}
 --- !u!1 &2497292583818418663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1298,3 +1275,34 @@ MonoBehaviour:
   rotate: 0
   maxDegreesRotation: 0
   rotationOffset: 0
+--- !u!1 &6866886776256155035
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5649137379404321460}
+  m_Layer: 9
+  m_Name: Mesh
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5649137379404321460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6866886776256155035}
+  m_LocalRotation: {x: 0.0000000052683564, y: -0.7071069, z: -0.0000000052683555,
+    w: 0.70710677}
+  m_LocalPosition: {x: 0, y: 0.32563284, z: 0}
+  m_LocalScale: {x: 50, y: 50, z: 50.00004}
+  m_Children: []
+  m_Father: {fileID: 2497292583818202405}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
