@@ -91,31 +91,40 @@ namespace MountainSlide.UI
             StartCoroutine(CheckDistance());
         }
 
-        float tSec;
+        private bool boostActive;
+        private int secondActive;
 
         //Разделить логику бустов и УИ на отдельные модули не зависиющих один от одного
-        public void StartBoost(float sec, TypeBoost typeBoost)
+        public void StartBoost(int sec, TypeBoost typeBoost)
         {
-            boostUiSpeed.gameObject.SetActive(true);
-            boostUiSpeed.SetupBoostUi(typeBoost);
-
-            StartCoroutine(StartBoostEffect(sec, () =>
+            if (!boostActive)
             {
-                boostUiSpeed.gameObject.SetActive(false);
-            }));
+                boostActive = true;
+                boostUiSpeed.gameObject.SetActive(true);
+                boostUiSpeed.SetupBoostUi(typeBoost);
+                StartCoroutine(StartBoostEffect(sec, () =>
+                {
+                    boostUiSpeed.gameObject.SetActive(false);
+                    boostActive = false;
+                }));
+            }
+            else
+            {
+                secondActive += 3;
+            }
         }
 
         #region Coruntine
-        IEnumerator StartBoostEffect(float sec, Action onDone = null)
+        IEnumerator StartBoostEffect(int sec, Action onDone = null)
         {
-            tSec += sec;
+            secondActive += sec;
             do
             {
-                boostUiSpeed.BoostTime = tSec;
+                boostUiSpeed.BoostTime = secondActive;
                 yield return new WaitForSeconds(1);
-                tSec--;
+                secondActive--;
 
-            } while (tSec > 0);
+            } while (secondActive > 0);
 
             onDone.Invoke();
         }

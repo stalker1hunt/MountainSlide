@@ -37,6 +37,7 @@ namespace MountainSlide.GameManager
         [SerializeField]
         private Transform finish;
         public static bool IsEndLevel;
+        public bool AiEnable;
 
         private int levelCompleted;
         public int LevelCompleted { get { return levelCompleted; } }
@@ -52,7 +53,10 @@ namespace MountainSlide.GameManager
             //});
 
             levelCompleted = Prefs.LevelCompleted;
-            spawner.FindWaysForBots();
+
+            if (AiEnable)
+                spawner.FindWaysForBots();
+
             uIManager.StartCheckDistance();
 
             onSuncsess?.Invoke();
@@ -94,17 +98,35 @@ namespace MountainSlide.GameManager
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
+        private bool boostActive;
+        private int secondActive;
         public void BoostTake(TypeBoost typeBoost)
         {
-            StartCoroutine(StartBoost());
+            if (!boostActive)
+            {
+                secondActive += 3;
+                boostActive = true;
+                StartCoroutine(StartBoost());
+            }
+            else
+            {
+                secondActive += 3;
+            }
+
             uIManager.StartBoost(3, typeBoost);
         }
 
-        IEnumerator StartBoost()
+        IEnumerator StartBoost(Action onDone = null)
         {
-            cachePlayer.GetComponent<MobileInput>().SetBoost(true);
-            yield return new WaitForSeconds(3);
-            cachePlayer.GetComponent<MobileInput>().SetBoost(false);
+            var _mobInput = cachePlayer.GetComponent<MobileInput>();
+            while (secondActive > 0)
+            {
+                _mobInput.SetBoost(boostActive);
+                yield return new WaitForSeconds(1);
+                secondActive--;
+            }
+            boostActive = false;
+            _mobInput.SetBoost(boostActive);
         }
 
         public void FinishLevel()
