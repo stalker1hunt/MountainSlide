@@ -50,7 +50,7 @@ namespace RVP
         public float steerFactor = 1;
         [Range(-1, 1)]
         public float steerAngle;
-        [System.NonSerialized]
+
         public float steerDegrees;
 
         [Tooltip("Effect of Ackermann steering geometry")]

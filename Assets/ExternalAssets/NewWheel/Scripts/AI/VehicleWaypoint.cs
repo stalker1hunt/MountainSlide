@@ -9,6 +9,7 @@ namespace RVP
     //Class for vehicle waypoints
     public class VehicleWaypoint : MonoBehaviour
     {
+        public bool finishWaypoint;
         public VehicleWaypoint nextPoint;
         public float radius = 10;
 

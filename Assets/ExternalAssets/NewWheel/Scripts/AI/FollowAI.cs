@@ -57,6 +57,8 @@ namespace RVP
         public float rollResetTime = 3;
         float rolledOverTime;
 
+        private bool isEnd;
+
         void Start()
         {
             tr = transform;
@@ -70,7 +72,7 @@ namespace RVP
 
         void FixedUpdate()
         {
-            if (target)
+            if (target && !isEnd)
             {
                 if (target != targetPrev)
                 {
@@ -81,6 +83,9 @@ namespace RVP
 
                 //Is the target a waypoint?
                 targetIsWaypoint = target.GetComponent<VehicleWaypoint>();
+                if (target.GetComponent<VehicleWaypoint>().finishWaypoint)
+                    isEnd = true;
+
                 //Can I see the target?
                 //targetVisible = !Physics.Linecast(tr.position, target.position, viewBlockMask);
 
