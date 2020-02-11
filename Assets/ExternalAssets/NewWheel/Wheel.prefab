@@ -253,8 +253,9 @@ MonoBehaviour:
   ebrakeForce: 0
   steerRangeMin: -40
   steerRangeMax: 40
-  steerFactor: 1.56
-  steerAngle: 0
+  steerFactor: 1
+  steerAngle: 0.311
+  steerDegrees: 12.44
   ackermannFactor: 0.2
   camberCurve:
     serializedVersion: 2
@@ -431,10 +432,13 @@ GameObject:
   - component: {fileID: 5039749279635460392}
   - component: {fileID: 732600989}
   - component: {fileID: 650165024624214629}
+  - component: {fileID: 3955225452060359231}
+  - component: {fileID: 4477256805331211986}
+  - component: {fileID: 7059489222526297033}
   m_Layer: 9
   m_Name: Wheel
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -577,7 +581,7 @@ MonoBehaviour:
   angularDragOnJump: 1
   fallSpeedLimit: 0.4
   applyFallLimitUpwards: 0
-  SpeedLimit: 15
+  SpeedLimit: 25
   ApplyLimit: 1
 --- !u!114 &5039749279635369886
 MonoBehaviour:
@@ -769,6 +773,188 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wheelMeshContent: {fileID: 1680261523}
+--- !u!114 &3955225452060359231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039749279625735898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3a871e618e5234583959237a27a203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4477256805331211986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039749279625735898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbf6806518860b4ba6e32c8e44407ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  generateHardCollider: 1
+  feedbackRpmBias: 0
+  rpmBiasCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  rpmBiasCurveLimit: Infinity
+  axleFriction: 0
+  frictionSmoothness: 0.5
+  forwardFriction: 1
+  sidewaysFriction: 1
+  forwardRimFriction: 0.5
+  sidewaysRimFriction: 0.5
+  forwardCurveStretch: 1
+  sidewaysCurveStretch: 1
+  forwardFrictionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sidewaysFrictionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 1
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 1
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  slipDependence: 2
+  forwardSlipDependence: 2
+  sidewaysSlipDependence: 2
+  normalFrictionCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  compressionFrictionFactor: 0.5
+  tireRadius: 0
+  rimRadius: 0
+  tireWidth: 0
+  rimWidth: 0
+  tirePressure: 1
+  popped: 0
+  canPop: 0
+  deformAmount: 0
+  rimGlow: 0
+  applyForceAtGroundContact: 0
+  impactSnd: {fileID: 0}
+  tireHitClips: []
+  rimHitClip: {fileID: 0}
+  tireAirClip: {fileID: 0}
+  tirePopClip: {fileID: 0}
+  detachForce: Infinity
+  mass: 0.05
+  tireMeshLoose: {fileID: 0}
+  rimMeshLoose: {fileID: 0}
+  detachedTireMaterial: {fileID: 0}
+  detachedRimMaterial: {fileID: 0}
+--- !u!114 &7059489222526297033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5039749279625735898}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa37c8e43a21b6a4b9de225076d22143, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slipThreshold: 0.3
+  calculateTangents: 1
+  tireMarkMaterials:
+  - {fileID: 2100000, guid: 0f81eed58f736d84bb27c58d2bdb6208, type: 2}
+  - {fileID: 2100000, guid: 59b812c3201839c43b0581488642da9c, type: 2}
+  - {fileID: 2100000, guid: 070abd29ac54dd84dbf620293b27a448, type: 2}
+  - {fileID: 2100000, guid: b9df5706855c3924483162823138d64d, type: 2}
+  rimMarkMaterials:
+  - {fileID: 2100000, guid: e9c6c2dc73c348b43b82b190b5773cb0, type: 2}
+  - {fileID: 2100000, guid: 02e9d79e88c50a349bf4413594f7fb6f, type: 2}
+  - {fileID: 2100000, guid: cbe7e29c9a737934ba76dd3aa63ae8f7, type: 2}
+  - {fileID: 2100000, guid: 924e1fe7ec9ad5c46854caa913b495ce, type: 2}
+  debrisParticles: []
+  sparks: {fileID: 0}
 --- !u!1 &5039749279625735998
 GameObject:
   m_ObjectHideFlags: 0
@@ -994,7 +1180,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625764232}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0.12990323, z: 0, w: 0.99152666}
   m_LocalPosition: {x: 0.005, y: 0.025, z: 0.149}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1241,7 +1427,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625765916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0050005354, y: -0.17063284, z: -0.14899966}
+  m_LocalPosition: {x: 0.03355216, y: -0.1706334, z: -0.14526042}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5039749279625395196}
