@@ -253,7 +253,7 @@ MonoBehaviour:
   ebrakeForce: 0
   steerRangeMin: -40
   steerRangeMax: 40
-  steerFactor: 1
+  steerFactor: 1.44
   steerAngle: 0.311
   steerDegrees: 12.44
   ackermannFactor: 0.2
@@ -598,7 +598,7 @@ MonoBehaviour:
   disableDuringCrash: 1
   flipPower: {x: 0, y: 0, z: 0}
   freeSpinFlip: 0
-  stopFlip: 1
+  stopFlip: 0
   rotationCorrection: {x: 5, y: 0, z: 10}
   groundCheckDistance: 100
   groundSteepnessLimit: 0.5
@@ -720,7 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88eb2f37da04ae48b060089a3929a72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectDrift: 0
+  detectDrift: 1
   detectJump: 1
   detectFlips: 1
   engine: {fileID: 5039749279635445600}
