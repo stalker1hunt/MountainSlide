@@ -431,6 +431,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c92c45699fd1f49856bca9543f8b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishWaypoint: 0
   nextPoint: {fileID: 0}
   radius: 2.42
   speed: 1
@@ -721,6 +722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c92c45699fd1f49856bca9543f8b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishWaypoint: 0
   nextPoint: {fileID: 84226093}
   radius: 2.42
   speed: 1
@@ -1209,6 +1211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c92c45699fd1f49856bca9543f8b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishWaypoint: 0
   nextPoint: {fileID: 1743322998}
   radius: 2.58
   speed: 1
@@ -1273,6 +1276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c92c45699fd1f49856bca9543f8b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishWaypoint: 0
   nextPoint: {fileID: 209970149}
   radius: 2.42
   speed: 1
@@ -3326,6 +3330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c92c45699fd1f49856bca9543f8b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishWaypoint: 0
   nextPoint: {fileID: 0}
   radius: 2.42
   speed: 1
@@ -3637,6 +3642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4c92c45699fd1f49856bca9543f8b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finishWaypoint: 0
   nextPoint: {fileID: 501046518}
   radius: 2.58
   speed: 1
@@ -3792,11 +3798,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.9110001
       objectReference: {fileID: 0}
-    - target: {fileID: 2497292583808165873, guid: 53d0107df58f63b4891a18ec9c670ca3,
-        type: 3}
-      propertyPath: dynamicJoystick
-      value: 
-      objectReference: {fileID: 1990211029}
     - target: {fileID: 7446951689108962249, guid: 53d0107df58f63b4891a18ec9c670ca3,
         type: 3}
       propertyPath: target
@@ -3807,6 +3808,11 @@ PrefabInstance:
       propertyPath: boostParticles.Array.data[0]
       value: 
       objectReference: {fileID: 379918363}
+    - target: {fileID: 2497292583808165873, guid: 53d0107df58f63b4891a18ec9c670ca3,
+        type: 3}
+      propertyPath: dynamicJoystick
+      value: 
+      objectReference: {fileID: 1990211029}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 53d0107df58f63b4891a18ec9c670ca3, type: 3}
 --- !u!1 &8882233252359733379
@@ -3886,9 +3892,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIManager: {fileID: 1749547573}
+  spawner: {fileID: 0}
   spawnHolderPlayer: {fileID: 0}
   cachePlayer: {fileID: 732600987}
   finish: {fileID: 960220800}
+  AiEnable: 0
 --- !u!1001 &8946030287584548462
 PrefabInstance:
   m_ObjectHideFlags: 0

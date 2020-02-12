@@ -11988,6 +11988,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1687006582}
     m_Modifications:
+    - target: {fileID: 2465093301511587523, guid: 6e32ec4ee78ec164db4500095e64469d,
+        type: 3}
+      propertyPath: m_Name
+      value: Finish
+      objectReference: {fileID: 0}
     - target: {fileID: 2465093301511587522, guid: 6e32ec4ee78ec164db4500095e64469d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12047,11 +12052,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 7.8450003
-      objectReference: {fileID: 0}
-    - target: {fileID: 2465093301511587523, guid: 6e32ec4ee78ec164db4500095e64469d,
-        type: 3}
-      propertyPath: m_Name
-      value: Finish
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e32ec4ee78ec164db4500095e64469d, type: 3}
@@ -13631,10 +13631,9 @@ Transform:
   - {fileID: 1265062444}
   - {fileID: 296141702}
   - {fileID: 960220800}
-  - {fileID: 732600988}
   - {fileID: 1714854790}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1712023409
 GameObject:
@@ -14018,7 +14017,7 @@ Transform:
   - {fileID: 205587704}
   - {fileID: 839132333}
   m_Father: {fileID: 1687006582}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!43 &1718853580
 Mesh:
@@ -15520,8 +15519,13 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1687006582}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5039749279625735898, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: m_Name
+      value: Wheel
+      objectReference: {fileID: 0}
     - target: {fileID: 5039749279625491436, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15580,93 +15584,28 @@ PrefabInstance:
     - target: {fileID: 5039749279625491436, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.0300002
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.00000053528424
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.14563283
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.00000033636104
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625735898, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_Name
-      value: Wheel
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635348180, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: slideLeanFactor
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: autoRollOver
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: downforce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: fallSpeedLimit
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: SpeedLimit
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: ApplyLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: applyFallLimitUpwards
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635427066, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: maxDegreesRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635427066, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: rotationOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635427066, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: applyInReverse
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: steerFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: ebrakeForce
-      value: 0
+      value: 1.0300004
       objectReference: {fileID: 0}
     - target: {fileID: 5039749279635460392, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: dynamicJoystick
       value: 
       objectReference: {fileID: 1990211029}
+    - target: {fileID: 5039749279635416534, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: tirePressure
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635416534, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: rimGlow
+      value: 0.085
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635348888, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: slipThreshold
+      value: 0.58
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46efd75de0966c4c87c933c405cc5f7, type: 3}
 --- !u!1001 &2067138058
@@ -16284,6 +16223,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIManager: {fileID: 8882233252619558364}
+  spawner: {fileID: 0}
   spawnHolderPlayer: {fileID: 0}
   cachePlayer: {fileID: 732600987}
   finish: {fileID: 960220800}
+  AiEnable: 0

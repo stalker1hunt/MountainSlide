@@ -95,29 +95,29 @@ MonoBehaviour:
   driveDividePower: 3
   gears:
   - ratio: -3.5
-    minRPM: -1263.9629
+    minRPM: -34.481102
     maxRPM: 0
   - ratio: 0
     minRPM: 0
     maxRPM: 0
   - ratio: 3
     minRPM: 0
-    maxRPM: 1474.6233
+    maxRPM: 40.227955
   - ratio: 2
-    minRPM: 1105.9675
-    maxRPM: 2211.935
+    minRPM: 30.170965
+    maxRPM: 60.34193
   - ratio: 1.5
-    minRPM: 1843.2792
-    maxRPM: 2949.2466
+    minRPM: 50.284943
+    maxRPM: 80.45591
   - ratio: 1.1
-    minRPM: 2413.02
-    maxRPM: 4021.7
+    minRPM: 65.82756
+    maxRPM: 109.7126
   - ratio: 0.9
-    minRPM: 3574.8442
-    maxRPM: 4915.411
+    minRPM: 97.52231
+    maxRPM: 134.09319
   - ratio: 0.7
-    minRPM: 4213.21
-    maxRPM: 6319.8145
+    minRPM: 114.93702
+    maxRPM: 172.40552
   startGear: 2
   skipNeutral: 1
   autoCalculateRpmRanges: 0
@@ -433,8 +433,6 @@ GameObject:
   - component: {fileID: 732600989}
   - component: {fileID: 650165024624214629}
   - component: {fileID: 3955225452060359231}
-  - component: {fileID: 4477256805331211986}
-  - component: {fileID: 7059489222526297033}
   m_Layer: 9
   m_Name: Wheel
   m_TagString: Player
@@ -481,6 +479,7 @@ MonoBehaviour:
   burnoutSmoothness: 0.5
   engine: {fileID: 5039749279635445600}
   wheels:
+  - {fileID: 0}
   - {fileID: 5039749279635416534}
   hoverWheels: []
   wheelGroups: []
@@ -785,176 +784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb3a871e618e5234583959237a27a203, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4477256805331211986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5039749279625735898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbf6806518860b4ba6e32c8e44407ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  generateHardCollider: 1
-  feedbackRpmBias: 0
-  rpmBiasCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  rpmBiasCurveLimit: Infinity
-  axleFriction: 0
-  frictionSmoothness: 0.5
-  forwardFriction: 1
-  sidewaysFriction: 1
-  forwardRimFriction: 0.5
-  sidewaysRimFriction: 0.5
-  forwardCurveStretch: 1
-  sidewaysCurveStretch: 1
-  forwardFrictionCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  sidewaysFrictionCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 1
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 1
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  slipDependence: 2
-  forwardSlipDependence: 2
-  sidewaysSlipDependence: 2
-  normalFrictionCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    - serializedVersion: 3
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0
-      outWeight: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  compressionFrictionFactor: 0.5
-  tireRadius: 0
-  rimRadius: 0
-  tireWidth: 0
-  rimWidth: 0
-  tirePressure: 1
-  popped: 0
-  canPop: 0
-  deformAmount: 0
-  rimGlow: 0
-  applyForceAtGroundContact: 0
-  impactSnd: {fileID: 0}
-  tireHitClips: []
-  rimHitClip: {fileID: 0}
-  tireAirClip: {fileID: 0}
-  tirePopClip: {fileID: 0}
-  detachForce: Infinity
-  mass: 0.05
-  tireMeshLoose: {fileID: 0}
-  rimMeshLoose: {fileID: 0}
-  detachedTireMaterial: {fileID: 0}
-  detachedRimMaterial: {fileID: 0}
---- !u!114 &7059489222526297033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5039749279625735898}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa37c8e43a21b6a4b9de225076d22143, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slipThreshold: 0.3
-  calculateTangents: 1
-  tireMarkMaterials:
-  - {fileID: 2100000, guid: 0f81eed58f736d84bb27c58d2bdb6208, type: 2}
-  - {fileID: 2100000, guid: 59b812c3201839c43b0581488642da9c, type: 2}
-  - {fileID: 2100000, guid: 070abd29ac54dd84dbf620293b27a448, type: 2}
-  - {fileID: 2100000, guid: b9df5706855c3924483162823138d64d, type: 2}
-  rimMarkMaterials:
-  - {fileID: 2100000, guid: e9c6c2dc73c348b43b82b190b5773cb0, type: 2}
-  - {fileID: 2100000, guid: 02e9d79e88c50a349bf4413594f7fb6f, type: 2}
-  - {fileID: 2100000, guid: cbe7e29c9a737934ba76dd3aa63ae8f7, type: 2}
-  - {fileID: 2100000, guid: 924e1fe7ec9ad5c46854caa913b495ce, type: 2}
-  debrisParticles: []
-  sparks: {fileID: 0}
 --- !u!1 &5039749279625735998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1427,7 +1256,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5039749279625765916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.03355216, y: -0.1706334, z: -0.14526042}
+  m_LocalPosition: {x: 0.03355129, y: -0.17063284, z: -0.14525913}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5039749279625395196}

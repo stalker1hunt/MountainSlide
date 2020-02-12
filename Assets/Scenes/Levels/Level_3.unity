@@ -26045,6 +26045,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edce2343b3703b948b53f9fee766a494, type: 3}
+--- !u!114 &1469441283 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5039749279635416534, guid: b46efd75de0966c4c87c933c405cc5f7,
+    type: 3}
+  m_PrefabInstance: {fileID: 2036765131}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecbf6806518860b4ba6e32c8e44407ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1477586020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28468,6 +28480,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1558414918}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1558757072 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7955702311584834213, guid: 4843a5a9b7cb63c49812d7a63d9d499a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1713908832}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8352384930d11bf48825d37d75277cba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1567666574
 Mesh:
   m_ObjectHideFlags: 0
@@ -39801,6 +39825,16 @@ PrefabInstance:
       propertyPath: dynamicJoystick
       value: 
       objectReference: {fileID: 1990211029}
+    - target: {fileID: 5039749279635445460, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: wheels.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635445460, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: wheels.Array.data[0]
+      value: 
+      objectReference: {fileID: 1469441283}
     - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: autoRollOver
@@ -39830,6 +39864,11 @@ PrefabInstance:
         type: 3}
       propertyPath: applyFallLimitUpwards
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635348180, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: slideLeanFactor
+      value: 0.39
       objectReference: {fileID: 0}
     - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
@@ -39870,11 +39909,6 @@ PrefabInstance:
         type: 3}
       propertyPath: applyInReverse
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635348180, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: slideLeanFactor
-      value: 0.39
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46efd75de0966c4c87c933c405cc5f7, type: 3}
@@ -41286,8 +41320,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   uIManager: {fileID: 8882233252619558364}
-  spawner: {fileID: 0}
+  spawner: {fileID: 1558757072}
   spawnHolderPlayer: {fileID: 0}
   cachePlayer: {fileID: 732600987}
   finish: {fileID: 960220800}
-  AiEnable: 0
+  AiEnable: 1
