@@ -253,7 +253,7 @@ MonoBehaviour:
   ebrakeForce: 0
   steerRangeMin: -40
   steerRangeMax: 40
-  steerFactor: 1.44
+  steerFactor: 1
   steerAngle: 0.311
   steerDegrees: 12.44
   ackermannFactor: 0.2
@@ -408,7 +408,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   limitSteer: 1
   steerCurveStretch: 1
-  applyInReverse: 0
+  applyInReverse: 1
   steeredWheels:
   - {fileID: 5039749279635434940}
   rotate: 1
@@ -449,7 +449,7 @@ Transform:
   m_GameObject: {fileID: 5039749279625735898}
   m_LocalRotation: {x: -0, y: -0.9748196, z: 0, w: -0.22299488}
   m_LocalPosition: {x: 0.47198105, y: 3.958, z: 0.5430145}
-  m_LocalScale: {x: 1.03, y: 1.03, z: 1.0300002}
+  m_LocalScale: {x: 1.03, y: 1.03, z: 1.0300004}
   m_Children:
   - {fileID: 5039749279625476802}
   - {fileID: 5039749279625415580}
@@ -479,7 +479,6 @@ MonoBehaviour:
   burnoutSmoothness: 0.5
   engine: {fileID: 5039749279635445600}
   wheels:
-  - {fileID: 0}
   - {fileID: 5039749279635416534}
   hoverWheels: []
   wheelGroups: []
@@ -580,7 +579,7 @@ MonoBehaviour:
   angularDragOnJump: 1
   fallSpeedLimit: 0.4
   applyFallLimitUpwards: 0
-  SpeedLimit: 25
+  SpeedLimit: 20
   ApplyLimit: 1
 --- !u!114 &5039749279635369886
 MonoBehaviour:
@@ -1175,7 +1174,7 @@ MonoBehaviour:
   popped: 0
   canPop: 1
   deformAmount: 0
-  rimGlow: 0
+  rimGlow: 0.085
   applyForceAtGroundContact: 1
   impactSnd: {fileID: 0}
   tireHitClips:
@@ -1215,7 +1214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa37c8e43a21b6a4b9de225076d22143, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slipThreshold: 0.3
+  slipThreshold: 0.58
   calculateTangents: 1
   tireMarkMaterials:
   - {fileID: 2100000, guid: 0f81eed58f736d84bb27c58d2bdb6208, type: 2}

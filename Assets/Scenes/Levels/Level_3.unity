@@ -26045,18 +26045,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: edce2343b3703b948b53f9fee766a494, type: 3}
---- !u!114 &1469441283 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5039749279635416534, guid: b46efd75de0966c4c87c933c405cc5f7,
-    type: 3}
-  m_PrefabInstance: {fileID: 2036765131}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ecbf6806518860b4ba6e32c8e44407ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1477586020
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39815,101 +39803,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -10.238001
       objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625491436, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 1.0300002
-      objectReference: {fileID: 0}
     - target: {fileID: 5039749279635460392, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: dynamicJoystick
       value: 
       objectReference: {fileID: 1990211029}
-    - target: {fileID: 5039749279635445460, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: wheels.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635445460, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: wheels.Array.data[0]
-      value: 
-      objectReference: {fileID: 1469441283}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: autoRollOver
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: downforce
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: fallSpeedLimit
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: SpeedLimit
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: ApplyLimit
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635424796, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: applyFallLimitUpwards
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635348180, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: slideLeanFactor
-      value: 0.39
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.03355129
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.17063284
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.14525913
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: steerFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: ebrakeForce
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635427066, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: maxDegreesRotation
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635427066, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: rotationOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279635427066, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: applyInReverse
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46efd75de0966c4c87c933c405cc5f7, type: 3}
 --- !u!1001 &2043190748
