@@ -3897,6 +3897,10 @@ MonoBehaviour:
   cachePlayer: {fileID: 732600987}
   finish: {fileID: 960220800}
   AiEnable: 0
+  skyboxs:
+  - {fileID: 2100000, guid: fc4ebf92730173e4a9133e2e257f2337, type: 2}
+  - {fileID: 2100000, guid: 52024b25df8543d42a6487bea90f8599, type: 2}
+  - {fileID: 2100000, guid: 95840c28320c45a478333c1276960653, type: 2}
 --- !u!1001 &8946030287584548462
 PrefabInstance:
   m_ObjectHideFlags: 0

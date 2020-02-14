@@ -7672,6 +7672,26 @@ PrefabInstance:
       propertyPath: handleRange
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_ClearFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_BackGroundColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_BackGroundColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_BackGroundColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: m_BackGroundColor.b
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
 --- !u!224 &1749547571 stripped
@@ -9220,3 +9240,7 @@ MonoBehaviour:
   cachePlayer: {fileID: 732600987}
   finish: {fileID: 960220800}
   AiEnable: 1
+  skyboxs:
+  - {fileID: 2100000, guid: fc4ebf92730173e4a9133e2e257f2337, type: 2}
+  - {fileID: 2100000, guid: 52024b25df8543d42a6487bea90f8599, type: 2}
+  - {fileID: 2100000, guid: 95840c28320c45a478333c1276960653, type: 2}

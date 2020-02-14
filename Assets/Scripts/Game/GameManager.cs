@@ -38,6 +38,7 @@ namespace MountainSlide.GameManager
         private Transform finish;
         public static bool IsEndLevel;
         public bool AiEnable;
+        [SerializeField] private List<Material> skyboxs = new List<Material>();
 
         private int levelCompleted;
         public int LevelCompleted { get { return levelCompleted; } }
@@ -45,12 +46,14 @@ namespace MountainSlide.GameManager
         private void Awake()
         {
             instance = this;
+            RenderSettings.skybox = GetRandomSkyBox();
         }
 
         public void InitGame(Action onSuncsess = null)
         {
             //InitPlayer(() => {
             //});
+
 
             levelCompleted = Prefs.LevelCompleted;
 
@@ -60,6 +63,11 @@ namespace MountainSlide.GameManager
             uIManager.StartCheckDistance();
 
             onSuncsess?.Invoke();
+        }
+
+        private Material GetRandomSkyBox()
+        {
+            return skyboxs[(UnityEngine.Random.Range(0, skyboxs.Count - 1))];
         }
 
         /*  private void InitPlayer(Action onSucsess = null, Action onFailed = null)

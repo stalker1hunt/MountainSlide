@@ -15740,16 +15740,6 @@ PrefabInstance:
       propertyPath: dynamicJoystick
       value: 
       objectReference: {fileID: 1990211029}
-    - target: {fileID: 5039749279625490364, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.12990323
-      objectReference: {fileID: 0}
-    - target: {fileID: 5039749279625490364, guid: b46efd75de0966c4c87c933c405cc5f7,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.99152666
-      objectReference: {fileID: 0}
     - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -15759,6 +15749,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.14525913
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279625490364, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.12990323
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279625490364, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99152666
       objectReference: {fileID: 0}
     - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
@@ -16392,3 +16392,7 @@ MonoBehaviour:
   cachePlayer: {fileID: 732600987}
   finish: {fileID: 960220800}
   AiEnable: 1
+  skyboxs:
+  - {fileID: 2100000, guid: fc4ebf92730173e4a9133e2e257f2337, type: 2}
+  - {fileID: 2100000, guid: 52024b25df8543d42a6487bea90f8599, type: 2}
+  - {fileID: 2100000, guid: 95840c28320c45a478333c1276960653, type: 2}
