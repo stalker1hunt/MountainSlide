@@ -3473,6 +3473,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.a
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2061420, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
+      propertyPath: field of view
+      value: 60.32818
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11497068, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}
     - {fileID: 11410548, guid: 08742b032cc95e54b88646cfcac1796a, type: 3}

@@ -88,6 +88,7 @@ namespace MountainSlide.UI
 
         public void StartCheckDistance()
         {
+            Debug.Log(gm.GetCurentDistance());
             StartCoroutine(CheckDistance());
         }
 
@@ -133,7 +134,7 @@ namespace MountainSlide.UI
         {
             do
             {
-                progressBar.fillAmount = 1 - gm.GetCurentDistance() * 0.01f;
+                progressBar.fillAmount = 1 - gm.GetCurentDistance() * 0.002f;
                 yield return new WaitForSeconds(0.1f);
             } while (!GameManager.GameManager.IsEndLevel);
         }

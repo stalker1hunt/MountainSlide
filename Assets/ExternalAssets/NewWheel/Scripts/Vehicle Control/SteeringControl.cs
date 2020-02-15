@@ -47,6 +47,16 @@ namespace RVP
             foreach (Suspension curSus in steeredWheels)
             {
                 curSus.steerAngle = Mathf.Lerp(curSus.steerAngle, steerAmount * curSus.steerFactor * (curSus.steerEnabled ? 1 : 0) * (curSus.steerInverted ? -1 : 1), steerRate * TimeMaster.inverseFixedTimeFactor * Time.timeScale);
+
+                if(curSus.steerAngle > 0)
+                {
+                    curSus.steerAngle -= 0.001f * TimeMaster.fixedTimeFactor;
+                }
+                else if(curSus.steerAngle < 0)
+                {
+                    curSus.steerAngle += 0.001f * TimeMaster.fixedTimeFactor;
+                }
+
             }
         }
 

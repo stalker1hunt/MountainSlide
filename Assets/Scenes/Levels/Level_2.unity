@@ -8558,7 +8558,7 @@ PrefabInstance:
     - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.03355129
+      value: -0.0090757925
       objectReference: {fileID: 0}
     - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
@@ -8568,7 +8568,27 @@ PrefabInstance:
     - target: {fileID: 5039749279625508314, guid: b46efd75de0966c4c87c933c405cc5f7,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.14525913
+      value: -0.14880703
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279625490364, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.013682955
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279625490364, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9999064
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: steerAngle
+      value: -0.049
+      objectReference: {fileID: 0}
+    - target: {fileID: 5039749279635434940, guid: b46efd75de0966c4c87c933c405cc5f7,
+        type: 3}
+      propertyPath: steerDegrees
+      value: -1.9599999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46efd75de0966c4c87c933c405cc5f7, type: 3}
