@@ -88,7 +88,6 @@ namespace MountainSlide.UI
 
         public void StartCheckDistance()
         {
-            Debug.Log(gm.GetCurentDistance());
             StartCoroutine(CheckDistance());
         }
 

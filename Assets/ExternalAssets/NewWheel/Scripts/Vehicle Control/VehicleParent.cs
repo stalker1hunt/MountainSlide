@@ -138,6 +138,7 @@ namespace RVP
             GameObject normTemp = new GameObject(tr.name + "'s Normal Orientation");
             norm = normTemp.transform;
 
+
             SetCenterOfMass();
 
             //Instantiate tow vehicle

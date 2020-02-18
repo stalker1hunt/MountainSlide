@@ -62,7 +62,15 @@ namespace MountainSlide.GameManager
 
             uIManager.StartCheckDistance();
 
+            cacheEulerAnglesY = cachePlayer.transform.localRotation.eulerAngles.y;
+
             onSuncsess?.Invoke();
+        }
+
+        float cacheEulerAnglesY;
+        private void FixedUpdate()
+        {
+         
         }
 
         private Material GetRandomSkyBox()

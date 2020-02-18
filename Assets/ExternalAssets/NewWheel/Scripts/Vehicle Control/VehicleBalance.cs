@@ -42,13 +42,24 @@ namespace RVP
         [Tooltip("How much to lean when sliding sideways")]
         public float slideLeanFactor = 1;
 
+        private float cahseRotationY;
+        Vector3 objectCurrentRotation;
+
         void Start()
         {
             tr = transform;
             rb = GetComponent<Rigidbody>();
             vp = GetComponent<VehicleParent>();
+
+            objectCurrentRotation = transform.localRotation.eulerAngles;
         }
 
+        [SerializeField]
+        private bool applyClampRotation;
+
+        float minRotation = -120;
+        float maxRotation = 120;
+       
         void FixedUpdate()
         {
             //Apply endo limit
@@ -56,6 +67,23 @@ namespace RVP
 
             if (vp.groundedWheels > 0)
             {
+                if(applyClampRotation)
+                {
+                    Vector3 currentRotation = transform.localRotation.eulerAngles;
+                    currentRotation.y = Mathf.Clamp(currentRotation.y, minRotation, maxRotation);
+                    transform.localRotation = Quaternion.Euler(currentRotation);
+                }
+
+                //if (transform.localRotation.eulerAngles.y > objectCurrentRotation.y)
+                //{
+                    
+                //    transform.localRotation = new Quaternion(transform.localRotation.eulerAngles.x, transform.localRotation.eulerAngles.y - 0.1f * TimeMaster.fixedTimeFactor, transform.localRotation.eulerAngles.z, transform.localRotation.w);
+                //}
+                //else if (transform.localRotation.eulerAngles.y < objectCurrentRotation.y)
+                //{
+                //    curSus.steerAngle += 0.001f * TimeMaster.fixedTimeFactor;
+                //}
+
                 if (leanFactor != Vector3.zero)
                 {
                     ApplyLean();
